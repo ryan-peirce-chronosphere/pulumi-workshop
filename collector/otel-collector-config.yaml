@@ -1,0 +1,29 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+        endpoint: "0.0.0.0:4318"
+
+exporters:
+  otlp/chronosphere:
+    endpoint: "tenant.chronosphere.io:443"
+    timeout: 30s
+    retry_on_failure:
+      enabled: true
+    compression: zstd
+    headers:
+      API-Token: "token"
+
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1000
+    send_batch_max_size: 2000
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/chronosphere]

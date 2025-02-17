@@ -1,0 +1,14 @@
+{
+    "name": "quickstart",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^18",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@pulumi-chronosphere/pulumi-chronosphere": "^0.9.6",
+        "@pulumi/gcp": "^8.0.0",
+        "@pulumi/kubernetes": "^4.21.1",
+        "@pulumi/pulumi": "^3.113.0"
+    }
+}
