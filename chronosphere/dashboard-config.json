@@ -1,0 +1,207 @@
+{
+    "name": "Pulumi Workshop Dashboard",
+    "collectionId": "SERVICE:pulumi-workshop",
+    "dashboardJson": {
+        "kind": "Dashboard",
+        "spec": {
+          "events": [],
+          "panels": {
+            "1": {
+              "kind": "Panel",
+              "spec": {
+                "display": {
+                  "name": "",
+                  "description": ""
+                },
+                "plugin": {
+                  "kind": "ChronoServiceTopology",
+                  "spec": {
+                    "spanFilters": [
+                      {
+                        "service": {
+                          "type": "Variable"
+                        },
+                        "operation": {
+                          "type": "Variable"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "queries": [
+                  {
+                    "kind": "DataQuery",
+                    "spec": {
+                      "plugin": {
+                        "kind": "PrometheusTimeSeriesQuery",
+                        "spec": {
+                          "query": ""
+                        }
+                      }
+                    }
+                  }
+                ],
+                "formulas": [],
+                "links": []
+              }
+            },
+            "Errors": {
+              "kind": "Panel",
+              "spec": {
+                "display": {
+                  "name": "Errors",
+                  "description": ""
+                },
+                "plugin": {
+                  "kind": "TimeSeriesChart",
+                  "spec": {
+                    "thresholds": {
+                      "steps": []
+                    }
+                  }
+                },
+                "queries": [
+                  {
+                    "kind": "DataQuery",
+                    "spec": {
+                      "plugin": {
+                        "kind": "PrometheusTimeSeriesQuery",
+                        "spec": {
+                          "query": "pulumi_workshop_requests{error=\"true\"}",
+                          "series_name": {
+                            "type": "Labels"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "query_options": {},
+                "formulas": [],
+                "links": []
+              }
+            },
+            "Requests": {
+              "kind": "Panel",
+              "spec": {
+                "display": {
+                  "name": "Requests per Second",
+                  "description": ""
+                },
+                "plugin": {
+                  "kind": "TimeSeriesChart",
+                  "spec": {}
+                },
+                "queries": [
+                  {
+                    "kind": "DataQuery",
+                    "spec": {
+                      "plugin": {
+                        "kind": "PrometheusTimeSeriesQuery",
+                        "spec": {
+                          "query": "pulumi_workshop_requests"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "formulas": [],
+                "links": []
+              }
+            },
+            "Duration": {
+              "kind": "Panel",
+              "spec": {
+                "display": {
+                  "name": "Duration",
+                  "description": ""
+                },
+                "plugin": {
+                  "kind": "TimeSeriesChart",
+                  "spec": {
+                    "y_axis": {
+                      "unit": {
+                        "kind": "Seconds"
+                      }
+                    }
+                  }
+                },
+                "queries": [
+                  {
+                    "kind": "DataQuery",
+                    "spec": {
+                      "plugin": {
+                        "kind": "PrometheusTimeSeriesQuery",
+                        "spec": {
+                          "query": "(rate(pulumi_workshop_requests_duration_bucket{lens_service=\"pulumi-workshop\",to_op=~\".*\"}[5m]))",
+                          "series_name": {
+                            "type": "Labels"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "formulas": [],
+                "links": []
+              }
+            }
+          },
+          "layouts": [
+            {
+              "kind": "Grid",
+              "spec": {
+                "display": {
+                  "title": "Panel Group",
+                  "collapse": {
+                    "open": true
+                  }
+                },
+                "items": [
+                  {
+                    "x": 0,
+                    "y": 6,
+                    "width": 24,
+                    "height": 13,
+                    "content": {
+                      "$ref": "#/spec/panels/1"
+                    }
+                  },
+                  {
+                    "x": 8,
+                    "y": 0,
+                    "width": 8,
+                    "height": 6,
+                    "content": {
+                      "$ref": "#/spec/panels/Errors"
+                    }
+                  },
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "width": 8,
+                    "height": 6,
+                    "content": {
+                      "$ref": "#/spec/panels/Requests"
+                    }
+                  },
+                  {
+                    "x": 16,
+                    "y": 0,
+                    "width": 8,
+                    "height": 6,
+                    "content": {
+                      "$ref": "#/spec/panels/Duration"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [],
+          "duration": "1h"
+        },
+        "spec_version": "1"
+      }
+      
+}

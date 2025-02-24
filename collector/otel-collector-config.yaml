@@ -7,13 +7,13 @@ receivers:
 
 exporters:
   otlp/chronosphere:
-    endpoint: "tenant.chronosphere.io:443"
+    endpoint: "${CHRONOSPHERE_ORG}.chronosphere.io:443"
     timeout: 30s
     retry_on_failure:
       enabled: true
     compression: zstd
     headers:
-      API-Token: "token"
+      API-Token: "${CHRONOSPHERE_API_TOKEN}"
 
 processors:
   batch:

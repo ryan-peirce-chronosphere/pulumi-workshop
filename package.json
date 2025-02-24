@@ -6,7 +6,9 @@
         "typescript": "^5.0.0"
     },
     "dependencies": {
+        "@checkly/pulumi": "^2.0.0",
         "@pulumi-chronosphere/pulumi-chronosphere": "^0.9.6",
+        "@pulumi/command": "^1.0.2",
         "@pulumi/gcp": "^8.0.0",
         "@pulumi/kubernetes": "^4.21.1",
         "@pulumi/pulumi": "^3.113.0"

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Chronosphere Retail App Landing</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        /* Global Styles */
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Helvetica Neue', sans-serif;
+          background-color: #e5e5e5; /* Fallback side background color */
+          background-image: url(https://images.wallpaperscraft.com/image/single/gradient_green_texture_131365_3840x2160.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        /* Full-width header and footer */
+        header, footer {
+          width: 100%;
+          background-color: #333;
+          color: #fff;
+        }
+        /* Centered container for header and footer content */
+        .header-container, .footer-container {
+          margin: 0 auto;
+          padding: 10px 20px; /* Reduced vertical padding */
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        header h1 {
+          margin: 0 0 0 10px;
+          font-size: 2rem;
+        }
+        /* Logo styling */
+        .logo {
+          height: 40px;
+          width: auto;
+        }
+        nav {
+          display: flex;
+          gap: 20px;
+        }
+        nav a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+        /* Main content wrapper without max-width and with new background color */
+        .wrapper {
+          flex: 1;
+          margin: 0 auto;
+          background-color: #f5f5f5;
+          display: flex;
+          flex-direction: column;
+          padding: 10px 20px;
+        }
+        /* Welcome section */
+        .welcome {
+          text-align: center;
+          margin: 10px 0;
+        }
+        .welcome h2 {
+          color: #000; /* Black text */
+          font-size: 3rem;
+          margin: 0;
+        }
+        /* Central image section */
+        .central-image {
+          padding: 10px;
+          text-align: center;
+        }
+        .central-image img {
+          width: 100%;
+          max-width: 800px; /* Limit maximum width */
+          height: auto;
+          border-radius: 10px;
+          /* Green shadow for the image */
+          box-shadow: 0 2px 5px rgba(0,128,0,0.5);
+          display: block;
+          margin: 0 auto;
+        }
+        /* Main content area */
+        .container {
+          padding: 10px;
+          text-align: center;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .container h2 {
+          font-size: 2rem;
+          margin-bottom: 5px;
+        }
+        .container p {
+          font-size: 1rem;
+          margin-bottom: 10px;
+        }
+        /* Recommendations Grid */
+        .recommendations {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          margin: 10px 0;
+        }
+        .recommendation-item {
+          text-align: center;
+        }
+        .recommendation-item img {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          border-radius: 10px;
+          /* Green shadow for recommendation images */
+          box-shadow: 0 2px 5px rgba(0,128,0,0.5);
+        }
+        .recommendation-item p {
+          margin-top: 5px;
+          font-size: 1rem;
+          color: #333;
+        }
+      </style>
+    </head>
+    <body>
+      <!-- Full-width header -->
+      <header>
+        <div class="header-container">
+          <div style="display: flex; align-items: center;">
+            <img class="logo" src="https://qualified-production.s3.us-east-1.amazonaws.com/uploads/a563756bfa6de1f81889a5ec6b5f6741ddaa2071715958ad3a28c6d81a3806de.png" alt="Chronosphere Retail App Logo">
+            <h1>Chronosphere Retail App</h1>
+          </div>
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <!-- Main Content Wrapper -->
+      <div class="wrapper">
+        <!-- Welcome Section -->
+        <div class="welcome">
+          <h2>Welcome to The Chronosphere Retail App</h2>
+        </div>
+        <!-- Central image section -->
+        <section class="central-image">
+          <img src="https://docs.chronosphere.io/_next/static/media/platform-overview-light.17d83e0c.png" alt="Central Image">
+        </section>
+        <!-- Container for recommendations -->
+        <div class="container">
+          <div>
+            <h2>Discover Our Latest Collections</h2>
+            <p>Explore handpicked products just for you.</p>
+            <div class="recommendations">
+              <div class="recommendation-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/1340/1340105.png" alt="Metrics">
+                <p>Metrics</p>
+              </div>
+              <div class="recommendation-item">
+                <img src="https://static.vecteezy.com/system/resources/previews/006/692/012/non_2x/calendar-date-date-notes-business-office-event-icon-template-black-color-editable-calendar-date-symbol-flat-illustration-for-graphic-and-web-design-free-vector.jpg" alt="Events">
+                <p>Events</p>
+              </div>
+              <div class="recommendation-item">
+                <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-log-file-format-icon-design-png-image_1041790.jpg" alt="Logs">
+                <p>Logs</p>
+              </div>
+              <div class="recommendation-item">
+                <img src="https://cdn-icons-png.flaticon.com/256/3273/3273365.png" alt="Traces">
+                <p>Traces</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full-width Footer -->
+      <footer>
+        <div class="footer-container">
+          <p>&copy; 2025 Chronosphere Retail App. All rights reserved.</p>
+          <nav>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </nav>
+        </div>
+      </footer>
+    </body>
+  </html>

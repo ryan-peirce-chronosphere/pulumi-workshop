@@ -1,0 +1,26 @@
+{
+    "name": "pulumi-workshop-monitor",
+    "collectionId": "SERVICE:pulumi-workshop",
+    "notificationPolicyId": "pulumi-workshop-notification-policy",
+    "query": {
+      "prometheusExpr": "pulumi_workshop_requests{error=\"true\"}"
+    },
+    "seriesConditions": {
+        "conditions": [
+            {
+                "op": "GT",
+                "severity":"warn",
+                "sustain":"1m",
+                "value": "3"
+            },
+            {
+                "op": "GT",
+                "severity": "critical",
+                "sustain": "1m",
+                "value": "4"
+            }
+        ]
+    },    
+    "interval": "1m",
+    "signalGrouping": {}
+  }

@@ -3,5 +3,4 @@
 /app/node_modules/
 package-lock.json
 
-Pulumi.yaml
 Pulumi.*.yaml
