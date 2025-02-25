@@ -48,36 +48,17 @@ gcloud services enable run.googleapis.com artifactregistry.googleapis.com
 pulumi login
 ```
 
-**Clone Repo:**
+**Create a New Pulumi Project:**
 
 ```bash
-git clone https://github.com/ryan-peirce-chronosphere/pulumi-workshop.git
+pulumi new gcp-typescript 
 ```
-
-**Initialize Pulumi and App:**
-
-Pulumi
-```bash
-pulumi stack init
-```
-
-```bash
-pulumi install
-```
-
-Node
-```bash
-cd app
-```
-
-```bash
-npm install
-```
+Copy / clone project code into the new directory.
 
 **Configure Pulumi Variables:**
 
 ```bash
-config set gcp:project pulumi-workshop-448917
+pulumi config set gcp:project <YOUR_GCP_PROJECT_ID>
 pulumi config set project <YOUR_GCP_PROJECT_ID>
 pulumi config set region <YOUR_GCP_REGION>
 pulumi config set repository <YOUR_ARTIFACT_REGISTRY_REPOSITORY_ID>
