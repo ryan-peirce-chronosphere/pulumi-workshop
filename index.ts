@@ -37,7 +37,7 @@ const imageRepository = new gcp.artifactregistry.Repository("imageRepository", {
 
 // Build and push images
 const buildAndPush = new command.local.Command("buildAndPush", {
-  create: pulumi.interpolate`DOCKER_BUILDKIT=0 docker build --build-arg CHRONOSPHERE_API_TOKEN=${process.env.CHRONOSPHERE_API_TOKEN} --build-arg CHRONOSPHERE_ORG=${process.env.CHRONOSPHERE_ORG} -t ${collectorImage} -f collector/Dockerfile collector && docker push ${collectorImage} && docker build -t ${appImage} -f app/Dockerfile app && docker push ${appImage}`,
+  create: pulumi.interpolate`docker build --build-arg CHRONOSPHERE_API_TOKEN=${process.env.CHRONOSPHERE_API_TOKEN} --build-arg CHRONOSPHERE_ORG=${process.env.CHRONOSPHERE_ORG} -t ${collectorImage} -f collector/Dockerfile collector && docker push ${collectorImage} && docker build -t ${appImage} -f app/Dockerfile app && docker push ${appImage}`,
 }, { dependsOn: imageRepository });
 
 
